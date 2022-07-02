@@ -161,13 +161,13 @@ with st.sidebar:
 
 ## ----- COMMUNICATING RESULTS -----
 st.subheader(f"Cars available: {len(space_df)}")
-st.dataframe(space_df.sort_values("profit", ascending=False).reset_index(drop=True))
 
 try:
     best_purchase = space_df.sort_values("profit", ascending=False).iloc[0]
 except IndexError:
-    st.subheader("There are no cars available that meet your preferences :(")
+    st.subheader("There are no cars available that meet your preferences 😔")
 else:
+    st.dataframe(space_df.sort_values("profit", ascending=False).reset_index(drop=True))
     st.subheader("Best option")
     st.write(
         f"""<font size=5>
