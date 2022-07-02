@@ -18,7 +18,7 @@ st.set_page_config(
 )
 
 # ---------- HEADER ----------
-st.title("Welcome to the Reused Car Picker app!")
+st.title("Welcome to the Used Car Picker app!")
 st.subheader("Get the car with the highest resale profit potential!")
 st.caption("Enter your preferences on the left to find which car might earn you the most profit (or least loss) after resale.")
 
