@@ -1,7 +1,3 @@
-*.pdf
-*.ipynb
-data_pricing_challenge.csv
-*.html
-transform_categorical.py
 *.ipynb_checkpoints*
 *__pycache__*
+archive*
