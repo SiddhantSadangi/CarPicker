@@ -156,7 +156,7 @@ with st.sidebar:
         space_df = space_df[space_df["feature_8"] == feature8]
 
     col1, col2_3 = st.columns((1,2))
-    if col1.button("Reset All", on_click=_reset, kwargs={"key": "all"}):
+    if col1.button("Reset All", on_click=_reset):
         col2_3.success("App reset!")
 
 ## ----- COMMUNICATING RESULTS -----
