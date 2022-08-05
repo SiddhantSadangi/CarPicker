@@ -10,7 +10,7 @@ st.set_page_config(
     page_icon="🚗",
     menu_items={
         "About": "Used Car Picker\n"
-        f"\nApp contact: [Siddhant Sadangi](mailto:siddhant.sadangi@gmail.com)",
+        "\nApp contact: [Siddhant Sadangi](mailto:siddhant.sadangi@gmail.com)",
         "Report a Bug": "https://github.com/SiddhantSadangi/carpicker/issues/new",
         "Get help": None,
     },
@@ -23,7 +23,7 @@ st.subheader("Get the car with the highest resale profit potential!")
 st.caption("Enter your preferences on the left to find which car might earn you the most profit (or least loss) after resale.")
 
 # ---------- FUNCTIONS ----------
-def _reset(key):
+def _reset():
     st.session_state["price_range"] = [data_clipped_df.price.min(), data_clipped_df.price.max()]
     st.session_state["duration"] = 0
     st.session_state["usage"] = 0
@@ -48,7 +48,7 @@ data_clipped_df["price"] = data_clipped_df["price"].astype(int)
 with open("regressor.pkl", "rb") as f:
     regressor = pickle.load(f)
 
-with open("params.json") as f:
+with open("params.json", encoding='utf8') as f:
     params = json.load(f)
 
 numerical_cols = params.get("numerical_cols")
@@ -98,7 +98,7 @@ with st.sidebar:
         label="Budget",
         min_value=data_clipped_df.price.min(),
         max_value=data_clipped_df.price.max(),
-        value=[data_clipped_df.price.min(), data_clipped_df.price.max()],
+        value=[float(data_clipped_df.price.min()), float(data_clipped_df.price.max())],
         step=100,
         key="price_range",
     )
