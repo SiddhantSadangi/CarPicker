@@ -96,9 +96,9 @@ with st.sidebar:
 
     price_range = st.slider(
         label="Budget",
-        min_value=data_clipped_df.price.min(),
-        max_value=data_clipped_df.price.max(),
-        value=[float(data_clipped_df.price.min()), float(data_clipped_df.price.max())],
+        min_value=int(data_clipped_df.price.min()),
+        max_value=int(data_clipped_df.price.max()),
+        value=[int(data_clipped_df.price.min()), int(data_clipped_df.price.max())],
         step=100,
         key="price_range",
     )
