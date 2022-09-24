@@ -167,7 +167,7 @@ try:
 except IndexError:
     st.subheader("There are no cars available that meet your preferences 😔")
 else:
-    st.dataframe(space_df.sort_values("profit", ascending=False).reset_index(drop=True))
+    st.dataframe(space_df.sort_values("profit", ascending=False).reset_index(drop=True), use_container_width=True)
     st.subheader("Best option")
     st.write(
         f"""<font size=5>
